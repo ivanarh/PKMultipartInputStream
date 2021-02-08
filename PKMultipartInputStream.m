@@ -1,8 +1,13 @@
 // PKMultipartInputStream.h
 // py.kerembellec@gmail.com
 
+#import <TargetConditionals.h>
+#if TARGET_OS_OSX
+#include <CoreServices/CoreServices.h>
+#else
 #import <UIKit/UIKit.h>
 #import <MobileCoreServices/UTType.h>
+#endif
 #import "PKMultipartInputStream.h"
 #define kHeaderStringFormat @"--%@\r\nContent-Disposition: form-data; name=\"%@\"\r\n\r\n"
 #define kHeaderDataFormat @"--%@\r\nContent-Disposition: form-data; name=\"%@\"\r\nContent-Type: %@\r\n\r\n"
