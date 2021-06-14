@@ -3,6 +3,8 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface PKMultipartInputStream : NSInputStream
 - (void)addPartWithName:(NSString *)name string:(NSString *)string;
 - (void)addPartWithName:(NSString *)name data:(NSData *)data;
@@ -17,5 +19,7 @@
 
 @property (nonatomic, readonly, nonnull) NSString *boundary;
 @property (nonatomic, readonly) NSUInteger length;
+
+NS_ASSUME_NONNULL_END
 
 @end
